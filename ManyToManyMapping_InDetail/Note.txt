@@ -1,0 +1,7 @@
+ try to removed mapped by property and run the same application
+ 
+ 	StudentAddress_address_id	students_student_id
+	1	2
+	1	3
+		
+		hibernate cretaed third mapping table by its own if we have not included mapped by property

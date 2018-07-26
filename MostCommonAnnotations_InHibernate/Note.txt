@@ -1,0 +1,15 @@
+
+6
+down vote
+accepted
+I usually use the properties file to automatically create a database when i'm using Spring, and below is how its done, hope this works so u'll modify this to suite your needs.....
+
+database.driver=com.mysql.jdbc.Driver
+database.url=jdbc:mysql://localhost:3306/userdb?createDatabaseIfNotExist=true
+database.user=root
+database.password=root
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.show_sql=true
+hibernate.hbm2ddl.auto=create
+
+after changing dialect to this org.hibernate.dialect.MySQL5Dialect its starting working.

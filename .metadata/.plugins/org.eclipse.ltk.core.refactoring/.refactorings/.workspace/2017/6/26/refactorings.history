@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;HibernateObjState_TransientPersistntdetached&apos; to &apos;HibernateObjState_TransientPersistntdetached1&apos;&#x0D;&#x0A;- Original element: &apos;HibernateObjState_TransientPersistntdetached&apos;&#x0D;&#x0A;- Renamed element: &apos;HibernateObjState_TransientPersistntdetached&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;HibernateObjState_TransientPersistntdetached&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=HibernateObjState_TransientPersistntdetached" name="HibernateObjState_TransientPersistntdetached1" references="true" stamp="1498733629656" version="1.0"/>
+</session>

@@ -1,0 +1,36 @@
+SELECT * FROM test.student_information;
+
+CREATE TABLE `STUDENT_ONETOONE` (
+  `student_id` int(11) NOT NULL AUTO_INCREMENT,
+  `student_name` varchar(20) NOT NULL,
+   PRIMARY KEY (`student_id`)
+) ;
+
+CREATE TABLE `STUDENTDETAIL_ONETOONE` (
+  `student_id` int(11) NOT NULL AUTO_INCREMENT ,
+  `student_mobile_number` varchar(20) NOT NULL,
+   PRIMARY KEY (`student_id`),
+   KEY `author_fk` (`student_id`),
+   CONSTRAINT `author_fk`  FOREIGN KEY (`student_id`)  REFERENCES `STUDENT_ONETOONE`(`student_id`)
+
+   
+   student_onetooneSELECT * FROM test.student_information;
+
+CREATE TABLE `STUDENT_MANYTOONE` (
+  `student_id` int(11) NOT NULL AUTO_INCREMENT,
+  `address_id` int(11) NOT NULL,
+  `student_name` varchar(20) NOT NULL,
+ `studentAddress_address_id` int(11) NOT NULL,
+   PRIMARY KEY (`student_id`),
+ KEY `author_fk1` (`address_id`),
+   CONSTRAINT `author_fk1`  FOREIGN KEY (`address_id`)  REFERENCES `STUDENTADDRESS_MANYTOONE`(`address_id`) 
+ON UPDATE CASCADE ON DELETE CASCADE
+) ;
+
+
+
+CREATE TABLE `STUDENTADDRESS_MANYTOONE` (
+  `address_id` int(11) NOT NULL AUTO_INCREMENT ,
+  `address_detail` varchar(20) NOT NULL,
+   PRIMARY KEY (`address_id`)
+ );

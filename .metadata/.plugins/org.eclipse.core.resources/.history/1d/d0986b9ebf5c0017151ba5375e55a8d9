@@ -1,0 +1,62 @@
+package com.gontuseries.hibernate;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		//creating configuration object  
+		 Configuration cfg=new Configuration();  
+		 cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file  
+
+		//creating seession factory object  
+		SessionFactory factory=cfg.buildSessionFactory();  
+		     
+		 //creating session object  
+		Session session1 =factory.openSession();  
+		  //creating transaction object  
+	
+		Transaction tx =session1.beginTransaction();
+		
+		// please note I am not saving studentCertification object but still it will
+		// be saved in a database that's the magic of Many to Many mapping
+		
+		Student student = (Student) session1.get(Student.class,4);
+		
+		System.out.println("Student object retrieved name"+student.getStudent_name());
+		
+		session1.getTransaction().commit();
+		
+		session1.close();
+		
+		
+		student.setStudent_name("Modifying student name in the Detached state");
+		
+		Session session2 =factory.openSession();
+		session2.beginTransaction();
+		
+		session2.update(student);
+		System.out.println("Student object retrieved name"+student.getStudent_name());
+		
+		
+		session2.close();
+		factory.close();
+	
+	    
+		System.out.println("successfully saved");  
+		
+ 
+	
+
+		         
+
+		
+	}
+}
